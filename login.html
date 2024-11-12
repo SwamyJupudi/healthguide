@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(bgbro1.avif);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            background: white;
+            width: 400px;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .container .form-group {
+            margin-bottom: 1rem;
+        }
+        .container label {
+            font-weight: bold;
+            color: #333;
+        }
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #ff6b6b;
+            border-radius: 10px;
+        }
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color:#ff6b6b;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .container input[type="submit"]:hover {
+             transform: scale(1.05);
+        }
+        .container .toggle {
+            text-align: center;
+            margin-top: 1rem;
+            color: #555;
+        }
+        .container .toggle a {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container .toggle a:hover {
+            text-decoration: underline;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="form-title">Sign Up</h2>
+        <form id="signup-form" class="form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group" id="confirm-password-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+            </div>
+            <input type="submit" value="Sign Up">
+        </form>
+
+        <div class="toggle">
+            <span id="toggle-text">Already have an account? <a href="javascript:void(0)" onclick="toggleForm()">Login</a></span>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const formTitle = document.getElementById('form-title');
+            const toggleText = document.getElementById('toggle-text');
+            const confirmPasswordGroup = document.getElementById('confirm-password-group');
+            const submitButton = document.querySelector('input[type="submit"]');
+
+            if (formTitle.textContent === 'Sign Up') {
+                // Switch to Login
+                formTitle.textContent = 'Login';
+                toggleText.innerHTML = 'Don\'t have an account? <a href="javascript:void(0)" onclick="toggleForm()">Sign Up</a>';
+                confirmPasswordGroup.classList.add('hidden');
+                submitButton.value = 'Login';
+            } else {
+                // Switch to Sign Up
+                formTitle.textContent = 'Sign Up';
+                toggleText.innerHTML = 'Already have an account? <a href="javascript:void(0)" onclick="toggleForm()">Login</a>';
+                confirmPasswordGroup.classList.remove('hidden');
+                submitButton.value = 'Sign Up';
+            }
+        }
+    </script>
+</body>
+</html>

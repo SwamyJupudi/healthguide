@@ -1,0 +1,28 @@
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.content-table th, .content-table td {
+    border: 1px solid black;
+    padding: 0.8rem;
+    text-align: center;
+    font-size: large;
+}
+
+.content-table th {
+    background-color:  black;
+    color: white;
+}
+
+.content-table td img {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.content-table td img:hover {
+    transform: scale(1.1);
+}

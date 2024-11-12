@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my project</title>
+    <link rel="stylesheet" href="statusstyle.css">
+</head>
+<body>
+    <a href="index.html" class="home-button">
+        <img src="home icon.jpg" alt="Home Button" />
+    </a>  
+    <div class="form-container">
+        <form action="process.php" method="post" id="infoForm">
+
+            <label for="age">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="age">Age</label>
+            <input type="text" id="age" name="age" placeholder="Enter your age" required>
+    
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+    
+            <label for="weight">Weight (kg)</label>
+            <input type="text" id="weight" name="weight" placeholder="Enter your weight" required>
+
+            <label for="height">Height</label>
+            <input type="text" id="height" name="height" placeholder="Enter your height in cm" required>
+    
+            <div class="button-container">
+                <button type="submit" class="submit-btn" onclick="handleSubmit(event)">Submit</button>
+                <button type="reset" class="clear-btn">Clear</button>
+            </div>
+        </form>
+    </div>
+    
+
+<script>
+       function handleSubmit(event) {
+            event.preventDefault(); 
+
+            
+            const age = parseInt(document.getElementById('age').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseInt(document.getElementById('weight').value);
+            const gender = document.getElementById('gender').value; // Get gender from the dropdown
+
+            
+            if (isNaN(age) || isNaN(weight) || isNaN(height) || !gender) {
+                alert("Please fill out all fields correctly.");
+                return;
+            }
+
+            
+            if (age >= 0 && age <= 10 && weight >= 0 && weight <= 40 && height >= 30 && height <= 140 && (gender === "male" || gender === "female" || gender==="other")) {
+                window.location.href = '10.html';
+            } else if (age > 10 && age <= 20 && weight > 30 && weight <= 80 && height > 100 && height <= 180 && (gender === "male" || gender === "female" || gender==="other")) {
+                window.location.href = '20.html';
+            } else if (age > 20 && age <= 30 && weight > 35 && weight <= 90 && height >= 120 && height <= 180 && (gender === "male" || gender === "female" || gender==="other")) {
+                window.location.href = '30.html';
+            } else if (age > 30 && age <= 50 && weight > 35 && weight <= 90 && height > 120 && height <= 200 && (gender === "male" || gender === "female" || gender==="other")) {
+                window.location.href = '4050.html';
+            } else if (age > 50 && age<100 && weight > 40 && weight<100 && height > 100 && height<=200 && (gender === "male" || gender === "female" || gender==="other")) {
+                window.location.href = '50.html';
+            } else {
+                alert("No matching criteria for the entered values.");
+            }
+        }
+</script>
+
+
+</body>
+</html>

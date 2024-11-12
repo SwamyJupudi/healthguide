@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Awareness</title>
+    <link rel="stylesheet" href="mentalstyle.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="home-button">
+            <img src="home icon.jpg" alt="Home Button" />
+        </a>
+        <h1>Mental Health Awareness</h1>
+        
+    </header>
+
+    <section class="intro">
+        <h2>Why Mental Health Matters</h2>
+        <p>Understanding mental health issues and finding the right help can improve quality of life. Explore solutions tailored to each age group.</p>
+    </section>
+
+    <section class="age-group">
+        <h2>Explore Mental Health Solutions by Age</h2>
+        
+        <div class="card-container">
+            <!-- Children Card -->
+            <div class="card">
+                <h3>Children</h3>
+                <img style=" height: 170px; width: 200px;"src="kiddo.jpg">
+                <p>Common Issues: Anxiety, Behavioral Issues</p>
+                <button onclick="showSolutions('children')">Solutions</button>
+            </div>
+
+            <!-- Teenagers Card -->
+            <div class="card">
+                <h3>Teenagers</h3>
+                <img style=" height: 170px; width: 200px;"src="teenage.jpg">
+                <p>Common Issues: Depression, Social Anxiety</p>
+                <button onclick="showSolutions('teenagers')">Solutions</button>
+            </div>
+
+            <!-- Adults Card -->
+            <div class="card">
+                <h3>Adults</h3>
+                <img style=" height: 170px; width: 200px;"src="adult.jpg">
+                <p>Common Issues: Stress, Work-Life Balance</p>
+                <button onclick="showSolutions('adults')">Solutions</button>
+            </div>
+
+            <!-- Seniors Card -->
+            <div class="card">
+                <h3>Seniors</h3>
+                <img style=" height: 170px; width: 200px;"src="oldman.jpg">
+                <p>Common Issues: Loneliness, Memory Issues</p>
+                <button onclick="showSolutions('seniors')">Solutions</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="solutions">
+        <!-- Solutions will be dynamically loaded here using JavaScript -->
+    </section>
+
+    <footer style="background-color: #333; height: 63px;">
+        <p style="color: white; text-align: center; padding-top: 20px;">&copy; 2024 Mental Health Awareness. All rights reserved.</p>
+    </footer>
+
+    <script>
+            function showSolutions(ageGroup) {
+    const solutions = {
+        children: {
+            text: "Encourage open communication, promote play therapy, and provide stable routines.",
+            image: "https://files.oaiusercontent.com/file-ZnXzNMTglBdsXf6eI13xVQpa?se=2024-11-12T13%3A03%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D04854189-f2bc-4822-84c7-ad969d4cf5d9.webp&sig=ayc0h6pTR37s8gM9uEPsgMH0z4lM107sS3VoGPz7Rmk%3D"
+        },
+        teenagers: {
+            text: "Encourage social connections, healthy boundaries with technology, and supportive counseling.",
+            image:"https://domf5oio6qrcr.cloudfront.net/medialibrary/7231/5953b6fc-2f92-44c8-96b8-833b7cf1a67d.jpg"
+        },
+        adults: {
+            text: "Practice mindfulness, ensure work-life balance, and seek therapy if needed.",
+            image: "https://th.bing.com/th/id/OIG4.2SjxsNTAi3pZji9_T8PM?w=1024&h=1024&rs=1&pid=ImgDetMain" 
+        },
+        seniors: {
+            text: "Stay socially active, engage in memory exercises, and seek companionship support.",
+            image: "https://th.bing.com/th/id/OIG4.uP8VWzUTS0cOFrWWxOKx?w=1024&h=1024&rs=1&pid=ImgDetMain" 
+        }
+    };
+
+    // Get the solution for the selected age group
+    const solutionContent = `
+        <div class="solution-container">
+            <h3>Solution for ${ageGroup.charAt(0).toUpperCase() + ageGroup.slice(1)}</h3>
+            <p>${solutions[ageGroup].text}</p>
+            <div class="solution-image">
+                <img src="${solutions[ageGroup].image}" alt="Solution for ${ageGroup}" class="solution-img">
+            </div>
+        </div>
+    `;
+
+    document.getElementById("solutions").innerHTML = solutionContent;
+}
+
+
+    </script>
+</body>
+</html>

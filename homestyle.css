@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+    background-color: #ff6b6b;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #ff6b6b;
+    transition: 0.3s;
+}
+
+/* Hero section styling */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url('your-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

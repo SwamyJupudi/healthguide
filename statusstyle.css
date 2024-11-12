@@ -1,0 +1,127 @@
+body{
+    background-image: url(img3.jpg);
+    background-size: cover;
+}
+
+#div1{
+    align-items: center;
+    justify-content: center;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url(img3.jpg);
+    background-size: cover;
+    }
+    
+    .form-container {
+        background: #fff;
+        padding: 40px;
+        width: 300px;
+        border-radius: 12px;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-out;
+        position: relative;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #ff6b6b;
+    }
+
+    label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0 20px;
+        border: 2px solid #ff6b6b;
+        border-radius: 8px;
+        outline: none;
+        font-size: 16px;
+        transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    select:focus {
+        border-color: #ff9a9e;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    button {
+        width:120px;
+        padding: 8px;
+        margin:10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ff6b6b;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+
+    button:active {
+        transform: scale(1);
+    }
+
+    .submit-btn {
+        background-color: #ff6b6b;
+    }
+
+    .clear-btn {
+        background-color: #c1c1c1;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+
+    .home-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-decoration: none;
+    }
+    
+    .home-button img {
+        width: 40px; 
+        height: 40px;
+        border-radius: 50%; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        transition: transform 0.2s ease; 
+    }
+    
+    .home-button img:hover {
+        transform: scale(1.1); 
+    }
